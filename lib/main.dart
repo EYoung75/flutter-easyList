@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 
-import "./product_manager.dart";
+import "./pages/auth.dart";
 
 void main() => runApp(MyApp());
 
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(title: Text("EasyList")),
-        body: ProductManager()
+        body: AuthPage()
       ),
     );
   }
