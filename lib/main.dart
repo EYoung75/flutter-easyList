@@ -1,6 +1,8 @@
 import "package:flutter/material.dart";
 
+import "./pages/manageProducts.dart";
 import "./pages/auth.dart";
+import "./pages/products.dart";
 
 void main() => runApp(MyApp());
 
@@ -14,10 +16,11 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.deepPurple
       ),
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(title: Text("EasyList")),
-        body: AuthPage()
-      ),
+      // home: AuthPage(),
+      routes: {
+        "/" : (BuildContext context) => ProductsPage(),
+        "/admin" : (BuildContext context) => ManageProducts()
+      },
     );
   }
 }
