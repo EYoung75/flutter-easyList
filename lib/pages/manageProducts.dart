@@ -1,37 +1,47 @@
 import "package:flutter/material.dart";
 import "./products.dart";
+import "./createProduct.dart";
+import "./myProducts.dart";
 
 class ManageProducts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: Drawer(
-        child: Column(
-          children: <Widget>[
-            AppBar(
-              automaticallyImplyLeading: false,
-              title: Text("Choose"),
-            ),
-            ListTile(title: Text("All Products"), 
-            onTap: () {
-              Navigator.pushReplacement(context, MaterialPageRoute(
-                builder: (BuildContext context) => ProductsPage()
-              ));
-            },)
-          ],
+    return DefaultTabController(
+      length: 2,
+          child: Scaffold(
+        drawer: Drawer(
+          child: Column(
+            children: <Widget>[
+              AppBar(
+                automaticallyImplyLeading: false,
+                title: Text("Choose"),
+              ),
+              ListTile(title: Text("All Products"), 
+              onTap: () {
+                Navigator.pushReplacement(context, MaterialPageRoute(
+                  builder: (BuildContext context) => ProductsPage()
+                ));
+              },)
+            ],
+          ),
         ),
-      ),
-      appBar: AppBar(
-        automaticallyImplyLeading: true,
-        title: Text("Product Manager"),
-      ),
-      body: Center(
-        child: Column(
-          children: <Widget>[
-            Text("Manage")
-          ],
+        appBar: AppBar(
+          bottom: TabBar(
+            tabs: <Widget>[
+              Tab(text: "Create Product", icon: Icon(Icons.create),),
+              Tab(text: "My Products", icon: Icon(Icons.list),)
+            ],
+          ),
+          automaticallyImplyLeading: true,
+          title: Text("Product Manager"),
         ),
-      )      
+        body: TabBarView(
+          children: <Widget>[
+            CreateProduct(),
+            MyProducts()
+          ],
+        )     
+      ),
     );
   }
 }
