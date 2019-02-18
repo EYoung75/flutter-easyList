@@ -48,7 +48,10 @@ class CreateProductState extends State<CreateProduct> {
               });
             },
           ),
+          SizedBox(height: 10),
           RaisedButton(
+            color: Theme.of(context).accentColor,
+            textColor: Colors.white,
             onPressed: () {
               final Map<String, dynamic> product = 
               {"title": titleValue,
@@ -57,6 +60,7 @@ class CreateProductState extends State<CreateProduct> {
                 "image": "assets/food.jpg"
               };
               widget.addProduct(product);
+              Navigator.pushReplacementNamed(context, "/products");
             },
             child: Text("Save"),
             )

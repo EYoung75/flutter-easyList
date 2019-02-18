@@ -38,7 +38,8 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       // home: AuthPage(),
       routes: {
-        "/": (BuildContext context) => ProductsPage(_products),
+        "/": (BuildContext context) => AuthPage(),
+        "/products": (BuildContext context) => ProductsPage(_products),
         "/admin": (BuildContext context) => ManageProducts(_addProduct, _deleteProduct)
       },
       onGenerateRoute: (RouteSettings settings) {

@@ -1,23 +1,53 @@
 import "package:flutter/material.dart";
 
-import "./products.dart";
+class AuthPage extends StatefulWidget {
+  String username = "";
+  String password = "";
 
-class AuthPage extends StatelessWidget{
-  @override 
+  @override
+  AuthPageState createState() {
+    return AuthPageState();
+  }
+}
+
+class AuthPageState extends State<AuthPage> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Login"),
       ),
       body: Center(
-        child: RaisedButton(
-          onPressed: () {
-            Navigator.pushReplacementNamed(context, "/");
-          },
-          child: Text("Login"),
+          child: Container(
+        margin: EdgeInsets.all(10),
+        child: Column(
+          children: <Widget>[
+            TextField(
+              onChanged: (value) {
+                setState(() {
+                  widget.username = value;
+                });
+              },
+              decoration: InputDecoration(labelText: "Username"),
+            ),
+            TextField(
+              onChanged: (value) {
+                setState(() {
+                  widget.password = value;
+                });
+              },
+              obscureText: true,
+              decoration: InputDecoration(labelText: "Password"),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Navigator.pushReplacementNamed(context, "/products");
+              },
+              child: Text("Login"),
+            ),
+          ],
         ),
-      ),
+      )),
     );
   }
 }
-
