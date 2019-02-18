@@ -1,6 +1,5 @@
 import "package:flutter/material.dart";
 
-
 class Products extends StatelessWidget {
   final List<Map<String, dynamic>> products;
 
@@ -11,7 +10,7 @@ class Products extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Image.asset(products[index]["image"]),
-          Text(products[index]["title"]),
+          Container(padding:EdgeInsets.all(10), child: Text(products[index]["title"], style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),)),
           ButtonBar(
             alignment: MainAxisAlignment.center,
             children: <Widget>[

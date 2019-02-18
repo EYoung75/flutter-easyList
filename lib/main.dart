@@ -34,6 +34,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+          fontFamily: "Acme",
           primarySwatch: Colors.deepOrange, accentColor: Colors.deepPurple),
       debugShowCheckedModeBanner: false,
       // home: AuthPage(),
