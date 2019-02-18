@@ -1,9 +1,6 @@
 import "package:flutter/material.dart";
 
 class AuthPage extends StatefulWidget {
-  String username = "";
-  String password = "";
-
   @override
   AuthPageState createState() {
     return AuthPageState();
@@ -11,6 +8,10 @@ class AuthPage extends StatefulWidget {
 }
 
 class AuthPageState extends State<AuthPage> {
+  String _username = "";
+  String _password = "";
+  bool _terms = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,30 +21,42 @@ class AuthPageState extends State<AuthPage> {
       body: Center(
           child: Container(
         margin: EdgeInsets.all(10),
-        child: Column(
+        child: ListView(
           children: <Widget>[
             TextField(
-              onChanged: (value) {
+              onChanged: (String value) {
                 setState(() {
-                  widget.username = value;
+                 _username = value;
                 });
               },
               decoration: InputDecoration(labelText: "Username"),
             ),
             TextField(
-              onChanged: (value) {
+              onChanged: (String value) {
                 setState(() {
-                  widget.password = value;
+                  _password = value;
                 });
               },
               obscureText: true,
+              keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(labelText: "Password"),
             ),
+            SwitchListTile(
+              value: _terms,
+              onChanged: (bool value) {
+                setState(() {
+                  _terms = value;
+                });
+              },
+              title: Text("Accept Terms"),
+            ),
             RaisedButton(
+              color: Theme.of(context).primaryColor,
               onPressed: () {
                 Navigator.pushReplacementNamed(context, "/products");
               },
               child: Text("Login"),
+              textColor: Colors.white,
             ),
           ],
         ),
