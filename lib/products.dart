@@ -31,7 +31,7 @@ class Products extends StatelessWidget {
                       style: TextStyle(color: Colors.white)))
             ],
           ),
-          Container(
+          Container( 
               padding: EdgeInsets.symmetric(horizontal: 6, vertical: 2.5),
               decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey, width: 1),
