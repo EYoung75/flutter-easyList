@@ -56,7 +56,7 @@ class CreateProductState extends State<CreateProduct> {
               final Map<String, dynamic> product = 
               {
                 "title": _titleValue,
-                "desciption": _description,
+                "description": _description,
                 "price": _price,
                 "image": "assets/food.jpg"
               };
