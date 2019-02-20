@@ -7,7 +7,7 @@ class ProductsPage extends StatelessWidget {
 
   ProductsPage(this.products);
 
-@override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
@@ -17,15 +17,24 @@ class ProductsPage extends StatelessWidget {
               automaticallyImplyLeading: false,
               title: Text("Choose"),
             ),
-            ListTile(title: Text("Manage Products"), 
-            onTap: () {
-              Navigator.pushReplacementNamed(context, "/admin");
-            },)
+            ListTile(
+              title: Text("Manage Products"),
+              leading: Icon(Icons.edit),
+              onTap: () {
+                Navigator.pushReplacementNamed(context, "/admin");
+              },
+            )
           ],
         ),
       ),
       appBar: AppBar(
         title: Text("EasyList"),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.favorite),
+            onPressed: () {},
+          )
+        ],
       ),
       body: ProductManager(products),
     );

@@ -21,9 +21,9 @@ class ManageProducts extends StatelessWidget {
                 automaticallyImplyLeading: false,
                 title: Text("Choose"),
               ),
-              ListTile(title: Text("All Products"), 
+              ListTile(title: Text("All Products"), leading: Icon(Icons.shopping_basket), 
               onTap: () {
-                Navigator.pushReplacementNamed(context, "/");
+                Navigator.pushReplacementNamed(context, "/products");
               },)
             ],
           ),

@@ -54,7 +54,8 @@ class CreateProductState extends State<CreateProduct> {
             textColor: Colors.white,
             onPressed: () {
               final Map<String, dynamic> product = 
-              {"title": _titleValue,
+              {
+                "title": _titleValue,
                 "desciption": _description,
                 "price": _price,
                 "image": "assets/food.jpg"
