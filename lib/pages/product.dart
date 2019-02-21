@@ -49,27 +49,36 @@ class ProductPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Image.asset(imageUrl),
+                Text(
+                  title,
+                  style: TextStyle(
+                      fontSize: 26, decoration: TextDecoration.underline),
+                ),
                 Container(
-                  padding: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                       Container(
-                  padding: EdgeInsets.symmetric(horizontal: 6, vertical: 2.5),
-                  decoration: BoxDecoration(
-                      color: Theme.of(context).accentColor,
-                      borderRadius: BorderRadius.circular(5)),
-                  child: Text("\$${price.toString()}",
-                      style: TextStyle(color: Colors.white))),
-                      SizedBox(width: 10),
-                      Text(title, style: TextStyle(fontSize: 26, decoration: TextDecoration.underline),),
+                      Container(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 6, vertical: 2.5),
+                          decoration: BoxDecoration(
+                              color: Theme.of(context).accentColor,
+                              borderRadius: BorderRadius.circular(5)),
+                          child: Text("\$${price.toString()}",
+                              style: TextStyle(color: Colors.white))),
+                      Container(margin: EdgeInsets.symmetric(horizontal: 10),child: Text("|")),
+                      Text("Union Station, Denver, CO")
                     ],
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.all(10),
-                  child: Center(child: Text(description, style: TextStyle(fontSize: 16),))
-                ),
+                    padding: EdgeInsets.all(10),
+                    child: Center(
+                        child: Text(
+                      description,
+                      style: TextStyle(fontSize: 16),
+                    ))),
                 Container(
                   padding: EdgeInsets.all(10),
                   child: FloatingActionButton(
